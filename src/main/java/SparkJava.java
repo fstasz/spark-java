@@ -36,7 +36,7 @@ public class SparkJava {
 
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
-        // Define RDD from OS X words file and return words containing search string.
+        // Define RDD from *nix words file and return words containing search string.
         JavaRDD<String> wordList = sc.textFile(WORDS_FILE).filter(s -> s.contains(SEARCH_STRING));
 
         // Print words containing search string.
