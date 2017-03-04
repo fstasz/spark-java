@@ -39,6 +39,9 @@ public class SparkJava {
         // Define RDD from OS X words file and return words containing search string.
         JavaRDD<String> wordList = sc.textFile(WORDS_FILE).filter(s -> s.contains(SEARCH_STRING));
 
+        // Print words containing search string.
+        for (String word : wordList.collect()) System.out.println(word);
+
         sc.stop();
     }
 }
